@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <title>Moin Khan | AI/ML Engineer & Full-Stack MERN Developer | IoT & Embedded Systems Developer</title>
+  <meta name="description" content="Portfolio of Moin Khan — Third-year Electronics & Telecommunication Engineering student (GPA 8.5), AI/ML Engineer, Full-Stack MERN Developer, and IoT Embedded Systems specialist. Technical Head at IEEE MHSSCE, Event Management Head at NSS Unit.">
+  <meta name="keywords" content="Moin Khan, AI ML Engineer, MERN Stack Developer, IoT, Embedded Systems, Python, PyTorch, TensorFlow, ESP32, Mumbai, SmartSSD 2026, ISRO BAH 2026">
+  <meta name="author" content="Moin Khan">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moinkhan.dev">
+  <meta property="og:title" content="Moin Khan | AI/ML Engineer & Full-Stack Developer">
+  <meta property="og:description" content="Building intelligent systems at the intersection of AI, IoT, and full-stack engineering.">
+  <meta property="og:image" content="./assets/og-image.jpg">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://moinkhan.dev">
+  <meta property="twitter:title" content="Moin Khan | AI/ML Engineer & Full-Stack Developer">
+  <meta property="twitter:description" content="Building intelligent systems at the intersection of AI, IoT, and full-stack engineering.">
+  <meta property="twitter:image" content="./assets/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Devicon for tech stack icons -->
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Live Background Canvas -->
+  <canvas id="bg-canvas" class="bg-canvas"></canvas>
+
+  <!-- Ambient Gradient Orbs -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- Custom Cursor (desktop only) -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-mark">MK</span>
+        <span class="logo-text">Moin Khan</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link" data-hover>About</a>
+        <a href="#journey" class="nav-link" data-hover>Journey</a>
+        <a href="#projects" class="nav-link" data-hover>Projects</a>
+        <a href="#research" class="nav-link" data-hover>Research</a>
+        <a href="#skills" class="nav-link" data-hover>Skills</a>
+        <a href="#achievements" class="nav-link" data-hover>Achievements</a>
+        <a href="#contact" class="nav-link nav-cta" data-hover>Contact</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-pulse"></span>
+        <span class="badge-text">Open for Internships</span>
+      </div>
+
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">
+        <span class="name-line">Moin</span>
+        <span class="name-line">Khan</span>
+      </h1>
+
+      <div class="hero-typing">
+        <span id="typingText"></span>
+        <span class="typing-cursor">|</span>
+      </div>
+
+      <p class="hero-location">
+        <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        Mumbai, India
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" data-hover>
+          <span>View Projects</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-hover>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" class="social-link" data-hover aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/moin-khan-0609a8337" target="_blank" rel="noopener noreferrer" class="social-link" data-hover aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:moinkhannwork@gmail.com" class="social-link" data-hover aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        <a href="https://leetcode.com/u/moinkhan-create/" target="_blank" rel="noopener noreferrer" class="social-link" data-hover aria-label="LeetCode">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 00-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.473 3.835-1.452l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM5.429 15.483c-.195.195-.467.299-.746.299s-.551-.104-.747-.299c-.195-.196-.299-.468-.299-.747 0-.279.104-.551.299-.747l4.257-4.261c.196-.195.468-.299.747-.299s.55.104.746.299c.195.195.299.467.299.747 0 .278-.104.55-.299.746L5.429 15.483z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span class="scroll-text">Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about section-reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01. About</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <!-- REPLACE THIS DIV WITH YOUR ACTUAL PHOTO -->
+              <!-- <img src="./assets/profile.jpg" alt="Moin Khan" class="profile-photo"> -->
+              <img src="./assets/profile.jpg" alt="Moin Khan" class="profile-photo">
+            </div>
+            <div class="photo-decoration"></div>
+            <div class="photo-decoration-2"></div>
+          </div>
+
+          <div class="current-roles">
+            <div class="role-card">
+              <div class="role-icon">⚡</div>
+              <div class="role-info">
+                <span class="role-title">Technical Head</span>
+                <span class="role-org">IEEE MHSSCE</span>
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-icon">🎯</div>
+              <div class="role-info">
+                <span class="role-title">Event Management Head</span>
+                <span class="role-org">NSS Unit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p class="lead">
+              I'm a <strong>third-year Electronics & Telecommunication Engineering</strong> student at MHSSCE, Mumbai, with a <strong>GPA of 8.5</strong>. I build intelligent systems that bridge the gap between hardware and intelligence.
+            </p>
+            <p>
+              My work spans <strong>AI/ML pipelines</strong> (fraud detection, computer vision, NLP), <strong>full-stack MERN applications</strong>, and <strong>embedded IoT systems</strong> (ESP32, Raspberry Pi, sensor fusion). I've shipped end-to-end prototypes from circuit design to cloud deployment.
+            </p>
+            <p>
+              Currently serving as <strong>Technical Head at IEEE MHSSCE</strong> and <strong>Event Management Head at NSS Unit</strong>, I lead technical initiatives and organize events that bring engineering communities together.
+            </p>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="8.5">0</span>
+              <span class="stat-label">Current GPA</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="10">0</span>
+              <span class="stat-label">Projects Shipped</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="2">0</span>
+              <span class="stat-label">Research Papers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="90">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">Teams Outperformed</span>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="./assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-hover></a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              <span>Download Resume</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Section -->
+  <section id="journey" class="journey section-reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02. Journey</span>
+        <h2 class="section-title">My Path</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2017 — 2018</span>
+            <h3 class="timeline-title">First Sparks</h3>
+            <p class="timeline-desc">Built foundational projects — Windmill, Hydraulic Arm, and basic circuit designs that ignited my passion for engineering.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-side="right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2019 — 2020</span>
+            <h3 class="timeline-title">System Builder</h3>
+            <p class="timeline-desc">Smart Dustbin (IoT), Touchless Sanitizer, Electric Cycle Conversion — first steps into automation and IoT.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2021 — 2022</span>
+            <h3 class="timeline-title">IoT Pioneer</h3>
+            <p class="timeline-desc">IoT Attendance System, RFID Asset Tracking, MQTT Networking — mastering connected devices and cloud protocols.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-side="right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2023 — 2024</span>
+            <h3 class="timeline-title">AI Integration</h3>
+            <p class="timeline-desc">Computer Vision Systems, YOLO Object Detection, DeepFace Integration — bringing intelligence to hardware.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-side="left">
+          <div class="timeline-dot timeline-dot-highlight"></div>
+          <div class="timeline-card timeline-card-highlight">
+            <span class="timeline-year">2025 — 2026</span>
+            <h3 class="timeline-title">Research & Innovation</h3>
+            <p class="timeline-desc">AeroShield 2.0 (SmartSSD 2026), Smart Pill Dispensing, RFID Cryptographic Security, ISRO BAH 2026, Network Forensics Research.</p>
+            <div class="timeline-badges">
+              <span class="badge">🏆 2nd Runner Up</span>
+              <span class="badge">📄 Research Accepted</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects section-reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03. Projects</span>
+        <h2 class="section-title">Deployed Systems</h2>
+        <p class="section-subtitle">Hover to reveal system internals. Click to explore repositories.</p>
+      </div>
+
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all" data-hover>All</button>
+        <button class="filter-btn" data-filter="ai-ml" data-hover>AI / ML</button>
+        <button class="filter-btn" data-filter="fullstack" data-hover>Full-Stack</button>
+        <button class="filter-btn" data-filter="iot" data-hover>IoT / Embedded</button>
+        <button class="filter-btn" data-filter="security" data-hover>Cybersecurity</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- ISRO BAH 2026 -->
+        <article class="project-card" data-category="ai-ml iot" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">ISRO BAH 2026 — PS #14 & #15</h3>
+          <p class="project-desc">Combined working prototype addressing two ISRO-defined problem statements. Scientific, data-driven approach using LSTM, CNN, XGBoost, and Kafka streaming for space-tech applications.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">LSTM</span>
+            <span class="tech-tag">CNN</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">Kafka</span>
+            <span class="tech-tag">ONNX</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+          <div class="project-highlight">🚀 ISRO Bharatiya Antariksh Hackathon 2026</div>
+        </article>
+
+        <!-- Fraud Detection -->
+        <article class="project-card" data-category="ai-ml fullstack" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Fraud Detection & Risk Scoring</h3>
+          <p class="project-desc">Real-world Bank of India transaction dataset. CatBoost + ensemble methods + Graph Neural Networks (GraphSAGE, RGCN, HAN, TGN) for transaction-network analysis. Grafana dashboard with automated case investigation.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">CatBoost</span>
+            <span class="tech-tag">GNN</span>
+            <span class="tech-tag">Kafka</span>
+            <span class="tech-tag">Grafana</span>
+            <span class="tech-tag">Prometheus</span>
+          </div>
+        </article>
+
+        <!-- AeroShield 2.0 -->
+        <article class="project-card" data-category="ai-ml iot" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">AeroShield 2.0 — Air Quality System</h3>
+          <p class="project-desc">Real-time air quality monitoring with ESP32 and LSTM neural networks. Sensor fusion across PM2.5, CO2, VOC, and temperature. Automated ventilation control with voice alerts.</p>
+          <div class="project-tech">
+            <span class="tech-tag">ESP32</span>
+            <span class="tech-tag">LSTM</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">MQTT</span>
+            <span class="tech-tag">Sensor Fusion</span>
+          </div>
+          <div class="project-highlight">🏆 2nd Runner Up — SmartSSD 2026 (90+ teams)</div>
+        </article>
+
+        <!-- Smart Pill Dispensing -->
+        <article class="project-card" data-category="ai-ml iot" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Smart Pill Dispensing with Face Verification</h3>
+          <p class="project-desc">AI-powered medicine dispenser with conversational healthcare intelligence. DeepFace identity verification, YOLOv8 consumption detection, multi-channel alerts (voice, SMS, WhatsApp, call).</p>
+          <div class="project-tech">
+            <span class="tech-tag">ESP32-CAM</span>
+            <span class="tech-tag">DeepFace</span>
+            <span class="tech-tag">YOLOv8</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">Twilio</span>
+          </div>
+        </article>
+
+        <!-- AI Document Processing -->
+        <article class="project-card" data-category="ai-ml fullstack" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">AI Document Processing Pipeline</h3>
+          <p class="project-desc">OCR-based structured data extraction from invoices and forms. Document classification and entity extraction. Containerized with Docker, exposed via FastAPI endpoints.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">OCR</span>
+            <span class="tech-tag">OpenCV</span>
+          </div>
+        </article>
+
+        <!-- AI Search & Recommendation -->
+        <article class="project-card" data-category="ai-ml fullstack" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">AI Search & Recommendation</h3>
+          <p class="project-desc">Semantic search prototype using transformer-based embeddings for product/content discovery. Hybrid keyword + vector search with ranking logic.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">Vector DB</span>
+          </div>
+        </article>
+
+        <!-- Observability Dashboard -->
+        <article class="project-card" data-category="fullstack" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Observability & Monitoring Dashboard</h3>
+          <p class="project-desc">Monitoring dashboard aggregating metrics/logs across services with anomaly-flagging logic. Docker containerized with Grafana/Prometheus visualization.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Prometheus</span>
+            <span class="tech-tag">Grafana</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+        </article>
+
+        <!-- Secure Printer Kiosk -->
+        <article class="project-card" data-category="iot" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Automated Secure Printer Kiosk</h3>
+          <p class="project-desc">Self-service printing kiosk with QR code authentication. Pi Camera integration, document upload, and auto-detected page count billing.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Raspberry Pi</span>
+            <span class="tech-tag">Pi Camera</span>
+            <span class="tech-tag">QR Auth</span>
+            <span class="tech-tag">Python</span>
+          </div>
+        </article>
+
+        <!-- RFID Cloning Mitigation -->
+        <article class="project-card" data-category="security iot" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">RFID Cloning Mitigation System</h3>
+          <p class="project-desc">Cryptographic challenge-response authentication replacing static UID transmission. Prevents cloned-card access with dynamic challenge generation and anti-replay protection.</p>
+          <div class="project-tech">
+            <span class="tech-tag">ESP32</span>
+            <span class="tech-tag">RC522</span>
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">Cryptography</span>
+          </div>
+        </article>
+
+        <!-- Smart Home Network Carving -->
+        <article class="project-card" data-category="security" data-hover>
+          <div class="project-header">
+            <div class="project-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Smart Home Network Carving</h3>
+          <p class="project-desc">IoT network forensic analysis using Wireshark traffic reconstruction. PCAP activity timelines to identify anomalous device behavior in smart home environments.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Wireshark</span>
+            <span class="tech-tag">PCAP</span>
+            <span class="tech-tag">Linux</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="research section-reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04. Research</span>
+        <h2 class="section-title">Published Work</h2>
+      </div>
+
+      <div class="research-grid">
+        <article class="research-card" data-hover>
+          <div class="research-icon">📄</div>
+          <div class="research-content">
+            <span class="research-venue">SmartSSD 2026 International Conference</span>
+            <h3 class="research-title">Hybrid Edge-AI Framework for Indoor Air Quality Management</h3>
+            <p class="research-desc">Accepted research paper presenting a novel edge-AI architecture for real-time indoor air quality monitoring using ESP32 and LSTM networks. Demonstrates sensor fusion, automated control loops, and energy-efficient inference at the edge.</p>
+            <div class="research-meta">
+              <span class="research-status status-accepted">Accepted</span>
+              <span class="research-location">MHSSCE, Mumbai</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="research-card" data-hover>
+          <div class="research-icon">🎤</div>
+          <div class="research-content">
+            <span class="research-venue">EDC, MHSSCE</span>
+            <h3 class="research-title">Quantum Tunneling to Spin-Based Revolution</h3>
+            <p class="research-desc">Presented research on emerging spintronic devices and quantum tunneling phenomena as the next frontier in computing beyond CMOS scaling limits.</p>
+            <div class="research-meta">
+              <span class="research-status status-presented">Presented</span>
+              <span class="research-location">Entrepreneurship Development Cell</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills section-reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05. Skills</span>
+        <h2 class="section-title">Complete Tech Stack</h2>
+        <p class="section-subtitle">Every technology, tool, and domain I have hands-on experience with.</p>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skills-categories">
+
+          <!-- Programming Languages -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #f59e0b;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">Programming Languages</h3>
+                <div class="category-bar"><div class="category-progress" data-width="92"></div></div>
+              </div>
+              <span class="category-pct">92%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><i class="devicon-python-plain"></i><span>Python</span></div>
+              <div class="tech-item" data-hover><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+              <div class="tech-item" data-hover><i class="devicon-typescript-plain"></i><span>TypeScript</span></div>
+              <div class="tech-item" data-hover><i class="devicon-c-plain"></i><span>C</span></div>
+              <div class="tech-item" data-hover><i class="devicon-cplusplus-plain"></i><span>C++</span></div>
+              <div class="tech-item" data-hover><i class="devicon-csharp-plain"></i><span>C#</span></div>
+              <div class="tech-item" data-hover><i class="devicon-java-plain"></i><span>Java</span></div>
+              <div class="tech-item" data-hover><i class="devicon-kotlin-plain"></i><span>Kotlin</span></div>
+              <div class="tech-item" data-hover><i class="devicon-php-plain"></i><span>PHP</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">OOP</span><span>OOP</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">DSA</span><span>Data Structures</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">XML</span><span>XML</span></div>
+            </div>
+          </div>
+
+          <!-- Full-Stack & Web -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #3b82f6;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">Full-Stack / Web Development</h3>
+                <div class="category-bar"><div class="category-progress" data-width="90"></div></div>
+              </div>
+              <span class="category-pct">90%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
+              <div class="tech-item" data-hover><i class="devicon-express-original"></i><span>Express.js</span></div>
+              <div class="tech-item" data-hover><i class="devicon-react-original"></i><span>React.js</span></div>
+              <div class="tech-item" data-hover><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
+              <div class="tech-item" data-hover><i class="devicon-angularjs-plain"></i><span>AngularJS</span></div>
+              <div class="tech-item" data-hover><i class="devicon-html5-plain"></i><span>HTML5</span></div>
+              <div class="tech-item" data-hover><i class="devicon-css3-plain"></i><span>CSS3</span></div>
+              <div class="tech-item" data-hover><i class="devicon-tailwindcss-original"></i><span>Tailwind CSS</span></div>
+              <div class="tech-item" data-hover><i class="devicon-bootstrap-plain"></i><span>Bootstrap</span></div>
+              <div class="tech-item" data-hover><i class="devicon-fastapi-plain"></i><span>FastAPI</span></div>
+              <div class="tech-item" data-hover><i class="devicon-flutter-plain"></i><span>Flutter</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">REST</span><span>REST APIs</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">GQL</span><span>GraphQL</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">JWT</span><span>JWT Auth</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">DOM</span><span>DOM Manip</span></div>
+              <div class="tech-item" data-hover><i class="devicon-webpack-plain"></i><span>Webpack</span></div>
+              <div class="tech-item" data-hover><i class="devicon-babel-plain"></i><span>Babel</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">API</span><span>API Testing</span></div>
+            </div>
+          </div>
+
+          <!-- AI / ML / Data Science -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #10b981;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">AI / ML / Data Science</h3>
+                <div class="category-bar"><div class="category-progress" data-width="88"></div></div>
+              </div>
+              <span class="category-pct">88%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><i class="devicon-pytorch-original"></i><span>PyTorch</span></div>
+              <div class="tech-item" data-hover><i class="devicon-tensorflow-original"></i><span>TensorFlow</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">TF</span><span>Scikit-learn</span></div>
+              <div class="tech-item" data-hover><i class="devicon-opencv-plain"></i><span>OpenCV</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">YOLO</span><span>YOLOv8/10</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">DF</span><span>DeepFace</span></div>
+              <div class="tech-item" data-hover><i class="devicon-numpy-original"></i><span>NumPy</span></div>
+              <div class="tech-item" data-hover><i class="devicon-pandas-original"></i><span>Pandas</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Mat</span><span>Matplotlib</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Sea</span><span>Seaborn</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Ply</span><span>Plotly</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">GNN</span><span>Graph Neural Nets</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">RNN</span><span>RNN / LSTM / GRU</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">CNN</span><span>CNN</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">NLP</span><span>NLP / LLMs</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">RF</span><span>Random Forests</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Ens</span><span>Ensemble Models</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Cat</span><span>CatBoost</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">XGB</span><span>XGBoost</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">MLf</span><span>MLflow</span></div>
+              <div class="tech-item" data-hover><i class="devicon-jupyter-plain"></i><span>Jupyter</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">EDA</span><span>EDA</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Lin</span><span>Linear Algebra</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Img</span><span>Image Analysis</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Pat</span><span>Pattern Recognition</span></div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #a78bfa;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">Databases & Data</h3>
+                <div class="category-bar"><div class="category-progress" data-width="85"></div></div>
+              </div>
+              <span class="category-pct">85%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
+              <div class="tech-item" data-hover><i class="devicon-mysql-plain"></i><span>MySQL</span></div>
+              <div class="tech-item" data-hover><i class="devicon-postgresql-plain"></i><span>PostgreSQL</span></div>
+              <div class="tech-item" data-hover><i class="devicon-microsoftsqlserver-plain"></i><span>SQL Server</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">AzS</span><span>Azure SQL</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Sup</span><span>Supabase</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">DBA</span><span>DB Admin</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">DBD</span><span>DB Design</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Agg</span><span>Data Aggregation</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Log</span><span>Data Logging</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Acq</span><span>Data Acquisition</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Cln</span><span>Data Cleaning</span></div>
+            </div>
+          </div>
+
+          <!-- DevOps / Cloud / Security -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #f43f5e;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">DevOps / Cloud / Security</h3>
+                <div class="category-bar"><div class="category-progress" data-width="82"></div></div>
+              </div>
+              <span class="category-pct">82%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><i class="devicon-docker-plain"></i><span>Docker</span></div>
+              <div class="tech-item" data-hover><i class="devicon-kubernetes-plain"></i><span>Kubernetes</span></div>
+              <div class="tech-item" data-hover><i class="devicon-git-plain"></i><span>Git</span></div>
+              <div class="tech-item" data-hover><i class="devicon-github-original"></i><span>GitHub</span></div>
+              <div class="tech-item" data-hover><i class="devicon-gitlab-plain"></i><span>GitLab CI/CD</span></div>
+              <div class="tech-item" data-hover><i class="devicon-nginx-original"></i><span>Nginx</span></div>
+              <div class="tech-item" data-hover><i class="devicon-linux-plain"></i><span>Linux</span></div>
+              <div class="tech-item" data-hover><i class="devicon-amazonwebservices-original"></i><span>AWS EC2</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">AzD</span><span>Azure DevOps</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">GKE</span><span>GKE</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Gra</span><span>Grafana</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Pro</span><span>Prometheus</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Kfk</span><span>Kafka</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">IaC</span><span>Infrastructure as Code</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">CI</span><span>CI/CD</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Sec</span><span>Container Security</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Orc</span><span>Container Orchestration</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">CTI</span><span>Cyber Threat Intel</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Enc</span><span>Data Encryption</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">IAM</span><span>Identity & Access Mgmt</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">OAuth</span><span>OAuth</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">WST</span><span>Web App Security</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">YARA</span><span>YARA Rules</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Fin</span><span>FinOps</span></div>
+            </div>
+          </div>
+
+          <!-- Embedded / IoT / Hardware -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #06b6d4;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">Embedded / IoT / Hardware</h3>
+                <div class="category-bar"><div class="category-progress" data-width="90"></div></div>
+              </div>
+              <span class="category-pct">90%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><span class="tech-icon-text">ESP</span><span>ESP32</span></div>
+              <div class="tech-item" data-hover><i class="devicon-arduino-plain"></i><span>Arduino</span></div>
+              <div class="tech-item" data-hover><i class="devicon-raspberrypi-plain"></i><span>Raspberry Pi</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">ARM</span><span>ARM Architecture</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">AVR</span><span>AVR Architecture</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">ATm</span><span>ATmega328</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">EmbC</span><span>Embedded C</span></div>
+              <div class="tech-item" data-hover><i class="devicon-c-plain"></i><span>C / C++ Embedded</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">I2C</span><span>I2C Protocol</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">SPI</span><span>SPI Protocol</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">UART</span><span>UART Protocol</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">MQTT</span><span>MQTT</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">PCB</span><span>PCB Design</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Pro</span><span>Proteus</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">RTOS</span><span>Real-Time OS</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Sens</span><span>Sensor Integration</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">IoT</span><span>IoT App Dev</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">IoTH</span><span>IoT Healthcare</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">IoTS</span><span>IoT Security</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">LiD</span><span>LiDAR</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Mech</span><span>Mechatronics</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Hyd</span><span>Hydraulic Systems</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Rob</span><span>Robotics Control</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Auto</span><span>Automation Design</span></div>
+            </div>
+          </div>
+
+          <!-- Networking & Systems -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #84cc16;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">Networking & Systems</h3>
+                <div class="category-bar"><div class="category-progress" data-width="78"></div></div>
+              </div>
+              <span class="category-pct">78%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><span class="tech-icon-text">Net</span><span>Network Architecture</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">TCP</span><span>TCP/IP</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">HTTP</span><span>HTTP Protocol</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Rtr</span><span>Routers</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Tel</span><span>Telecom Networks</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">OS</span><span>OS Concepts</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Arch</span><span>Computer Architecture</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Sys</span><span>System Architecture</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Int</span><span>System Integration</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">SDLC</span><span>SDLC</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Scrum</span><span>Scrum</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">API</span><span>API Gateway</span></div>
+            </div>
+          </div>
+
+          <!-- UI/UX & Design -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #ec4899;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">UI/UX & Design</h3>
+                <div class="category-bar"><div class="category-progress" data-width="75"></div></div>
+              </div>
+              <span class="category-pct">75%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><span class="tech-icon-text">UI</span><span>UI Design</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">UX</span><span>UX Research</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Proto</span><span>UI Prototyping</span></div>
+              <div class="tech-item" data-hover><i class="devicon-figma-plain"></i><span>Figma</span></div>
+              <div class="tech-item" data-hover><i class="devicon-canva-original"></i><span>Canva</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Logo</span><span>Logo & Branding</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Dash</span><span>Dashboard Dev</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Fash</span><span>Fashion Design</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Model</span><span>Model Making</span></div>
+            </div>
+          </div>
+
+          <!-- Domain Knowledge -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon" style="--cat-color: #fb923c;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+              </div>
+              <div class="category-info">
+                <h3 class="category-title">Domain Knowledge</h3>
+                <div class="category-bar"><div class="category-progress" data-width="80"></div></div>
+              </div>
+              <span class="category-pct">80%</span>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" data-hover><span class="tech-icon-text">Fin</span><span>Fintech</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">B2B</span><span>B2B Sales</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Biz</span><span>Business Development</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Ent</span><span>Entrepreneurship</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Health</span><span>Healthcare Systems</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Med</span><span>Medical Procedures</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">HltEd</span><span>Health Education</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">MHealth</span><span>Mental Health First Aid</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">HltAn</span><span>Healthcare Analytics</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Real</span><span>Real Estate</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Oil</span><span>Oil & Gas</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Air</span><span>Air Quality Modeling</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Env</span><span>Environmental Impact</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">KPI</span><span>KPI Development</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Legal</span><span>Legal Research</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Carp</span><span>Carpentry</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Lang</span><span>Language Learning</span></div>
+              <div class="tech-item" data-hover><span class="tech-icon-text">Multi</span><span>Multitasking</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section --><!-- Achievements Section -->
+  <section id="achievements" class="achievements section-reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">06. Achievements</span>
+        <h2 class="section-title">Recognition</h2>
+      </div>
+
+      <div class="achievements-grid">
+        <div class="achievement-card" data-hover>
+          <div class="achievement-icon">🏆</div>
+          <h3 class="achievement-title">2nd Runner Up</h3>
+          <p class="achievement-desc">SmartSSD 2026 R&D Cell Competition — outperformed 90+ teams from 2nd to final year across Maharashtra.</p>
+          <span class="achievement-tag">AeroShield 2.0</span>
+        </div>
+
+        <div class="achievement-card" data-hover>
+          <div class="achievement-icon">📄</div>
+          <h3 class="achievement-title">Research Accepted</h3>
+          <p class="achievement-desc">Hybrid Edge-AI Framework paper accepted at SmartSSD 2026 International Conference, MHSSCE.</p>
+          <span class="achievement-tag">International</span>
+        </div>
+
+        <div class="achievement-card" data-hover>
+          <div class="achievement-icon">🚀</div>
+          <h3 class="achievement-title">ISRO BAH 2026</h3>
+          <p class="achievement-desc">Built working prototype for ISRO Problem Statements #14 & #15 at Bharatiya Antariksh Hackathon 2026.</p>
+          <span class="achievement-tag">Space Tech</span>
+        </div>
+
+        <div class="achievement-card" data-hover>
+          <div class="achievement-icon">⚡</div>
+          <h3 class="achievement-title">IEEE Technical Head</h3>
+          <p class="achievement-desc">Leading technical initiatives, workshops, and projects at IEEE MHSSCE Student Branch.</p>
+          <span class="achievement-tag">Leadership</span>
+        </div>
+
+        <div class="achievement-card" data-hover>
+          <div class="achievement-icon">🎯</div>
+          <h3 class="achievement-title">NSS Event Management Head</h3>
+          <p class="achievement-desc">Managing events, sponsorships, and public relations for NSS Unit activities and social drives.</p>
+          <span class="achievement-tag">Leadership</span>
+        </div>
+
+        <div class="achievement-card" data-hover>
+          <div class="achievement-icon">🌐</div>
+          <h3 class="achievement-title">International Finalist</h3>
+          <p class="achievement-desc">Recognized as finalist in international innovation competitions for IoT and AI solutions.</p>
+          <span class="achievement-tag">Global</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section-reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">07. Contact</span>
+        <h2 class="section-title">Let's Build Together</h2>
+        <p class="section-subtitle">Open for AI/ML and MERN Full-Stack internships.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-label">Email</span>
+              <a href="mailto:moinkhannwork@gmail.com" class="contact-value">moinkhannwork@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-label">Phone</span>
+              <a href="tel:+919167716563" class="contact-value">+91 91677 16563</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Mumbai, Maharashtra, India</span>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" class="contact-social-link" data-hover aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/moin-khan-0609a8337" target="_blank" rel="noopener noreferrer" class="contact-social-link" data-hover aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://leetcode.com/u/moinkhan-create/" target="_blank" rel="noopener noreferrer" class="contact-social-link" data-hover aria-label="LeetCode">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 00-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.473 3.835-1.452l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM5.429 15.483c-.195.195-.467.299-.746.299s-.551-.104-.747-.299c-.195-.196-.299-.468-.299-.747 0-.279.104-.551.299-.747l4.257-4.261c.196-.195.468-.299.747-.299s.55.104.746.299c.195.195.299.467.299.747 0 .278-.104.55-.299.746L5.429 15.483z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Project collaboration, internship...">
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" data-hover>
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">MK</span>
+          <p class="footer-tagline">Engineering intelligence into reality.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about" class="footer-link">About</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#research" class="footer-link">Research</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com/moinkhan-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/moin-khan-0609a8337" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:moinkhannwork@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://leetcode.com/u/moinkhan-create/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 00-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.473 3.835-1.452l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM5.429 15.483c-.195.195-.467.299-.746.299s-.551-.104-.747-.299c-.195-.196-.299-.468-.299-.747 0-.279.104-.551.299-.747l4.257-4.261c.196-.195.468-.299.747-.299s.55.104.746.299c.195.195.299.467.299.747 0 .278-.104.55-.299.746L5.429 15.483z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-credit">Designed & Engineered by <strong>Moin Khan</strong></p>
+        <p class="footer-meta">Electronics & Telecommunication • Mumbai, India • <span id="year"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
