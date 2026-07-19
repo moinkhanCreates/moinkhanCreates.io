@@ -34,15 +34,15 @@
 
   <style>
     :root {
-      --bg-primary: #0a0e1a;
-      --bg-secondary: #0f1629;
-      --bg-card: rgba(15, 22, 41, 0.7);
-      --bg-card-hover: rgba(20, 30, 55, 0.85);
-      --border-subtle: rgba(100, 180, 255, 0.08);
-      --border-glow: rgba(0, 200, 255, 0.15);
-      --text-primary: #e8f0ff;
-      --text-secondary: #8b9bb4;
-      --text-muted: #5a6a85;
+      --bg-primary: #000000;
+      --bg-secondary: #050505;
+      --bg-card: rgba(15, 15, 18, 0.7);
+      --bg-card-hover: rgba(24, 24, 28, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(0, 212, 255, 0.25);
+      --text-primary: #f5f7fb;
+      --text-secondary: #a3acbd;
+      --text-muted: #6b7386;
       --accent-cyan: #00d4ff;
       --accent-blue: #3b82f6;
       --accent-purple: #a855f7;
@@ -82,7 +82,7 @@
     }
     .ambient-orb {
       position: fixed; border-radius: 50%; filter: blur(120px);
-      opacity: 0.15; pointer-events: none; z-index: 0;
+      opacity: 0.22; pointer-events: none; z-index: 0;
       animation: orbFloat 20s ease-in-out infinite;
     }
     .orb-1 { width: 500px; height: 500px; background: var(--accent-cyan); top: -10%; right: -5%; animation-delay: 0s; }
@@ -108,7 +108,7 @@
       border-bottom: 1px solid transparent;
     }
     .navbar.scrolled {
-      background: rgba(10, 14, 26, 0.85); backdrop-filter: blur(20px);
+      background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-subtle); padding: 0.8rem 0;
     }
     .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
@@ -122,8 +122,8 @@
     .logo-text { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
     .nav-menu { display: flex; align-items: center; gap: 2.5rem; }
     .nav-link {
-      text-decoration: none; color: var(--text-secondary); font-size: 0.85rem;
-      font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-secondary); font-size: 0.9rem;
+      font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
       transition: var(--transition-smooth); position: relative;
     }
     .nav-link::after {
@@ -139,7 +139,7 @@
     .hamburger-line { width: 24px; height: 2px; background: var(--text-primary); transition: var(--transition-smooth); }
     @media (max-width: 900px) {
       .nav-menu { position: fixed; top: 0; right: -100%; width: 70%; max-width: 350px; height: 100vh;
-        background: rgba(10, 14, 26, 0.98); backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.97); backdrop-filter: blur(20px);
         flex-direction: column; justify-content: center; gap: 2rem; padding: 2rem;
         transition: right 0.4s ease;
       }
@@ -208,6 +208,58 @@
     @keyframes scrollWheel { 0%, 100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(8px); opacity: 0.3; } }
     @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
 
+    /* HERO GREETING INTRO — cover-page multilingual animation */
+    .hero-intro-overlay {
+      position: absolute; inset: 0; z-index: 6;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: rgba(0, 0, 0, 0.82);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.9s;
+      padding: 2rem;
+    }
+    .hero-intro-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .greeting-word {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: clamp(3.2rem, 16vw, 10.5rem);
+      line-height: 1;
+      text-align: center;
+      max-width: 95vw;
+      word-break: break-word;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 55%, var(--accent-blue) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      opacity: 0; transform: scale(0.82) translateY(24px);
+      transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .greeting-word.show { opacity: 1; transform: scale(1) translateY(0); }
+    .greeting-word.hide { opacity: 0; transform: scale(1.1) translateY(-18px); }
+    .greeting-lang {
+      margin-top: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: clamp(0.7rem, 1.8vw, 1rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      opacity: 0;
+      transition: opacity 0.5s ease 0.1s;
+    }
+    .greeting-lang.show { opacity: 0.85; }
+    .greeting-skip {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      background: none; border: 1px solid var(--border-subtle); color: var(--text-muted);
+      font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.6rem 1.4rem; border-radius: 50px; cursor: pointer; transition: var(--transition-smooth);
+    }
+    .greeting-skip:hover { color: var(--accent-cyan); border-color: var(--accent-cyan); background: rgba(0, 212, 255, 0.05); }
+    .hero-content { opacity: 0; transform: translateY(28px); transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
+    .hero-content.revealed { opacity: 1; transform: translateY(0); }
+    .scroll-indicator { opacity: 0; transition: opacity 1s ease 0.3s; }
+    .scroll-indicator.revealed { opacity: 1; }
+    @media (max-width: 600px) {
+      .greeting-word { font-size: clamp(2.6rem, 15vw, 5rem); }
+    }
+
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
     section { position: relative; z-index: 1; padding: 100px 0; }
     .section-header { text-align: center; margin-bottom: 4rem; }
@@ -218,12 +270,12 @@
       border-radius: 4px; background: rgba(0, 212, 255, 0.03);
     }
     .section-title {
-      font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700; margin-bottom: 1rem;
+      font-family: var(--font-heading); font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em;
       background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+    .section-subtitle { color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
 
     /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
@@ -242,12 +294,12 @@
     .role-title { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
     .role-org { font-size: 0.8rem; color: var(--text-muted); }
     .about-content { display: flex; flex-direction: column; gap: 2rem; }
-    .about-text p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 1.05rem; line-height: 1.8; }
-    .about-text p.lead { font-size: 1.15rem; color: var(--text-primary); }
-    .about-text strong { color: var(--text-primary); font-weight: 600; }
+    .about-text p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 1.12rem; line-height: 1.8; }
+    .about-text p.lead { font-size: 1.3rem; font-weight: 500; color: var(--text-primary); }
+    .about-text strong { color: var(--text-primary); font-weight: 700; }
     .about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; }
     .stat-item { text-align: center; }
-    .stat-number { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--accent-cyan); line-height: 1; }
+    .stat-number { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); line-height: 1; }
     .stat-suffix { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); }
     .stat-label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
     .about-actions { display: flex; gap: 1rem; }
@@ -267,7 +319,7 @@
     .timeline-card:hover { border-color: var(--border-glow); background: var(--bg-card-hover); transform: translateY(-3px); }
     .timeline-card-highlight { border-color: rgba(0, 212, 255, 0.2); }
     .timeline-year { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); letter-spacing: 0.1em; }
-    .timeline-title { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; margin: 0.5rem 0; color: var(--text-primary); }
+    .timeline-title { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; margin: 0.5rem 0; color: var(--text-primary); }
     .timeline-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
     .timeline-badges { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
     .badge { padding: 0.3rem 0.8rem; background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.15); border-radius: 50px; font-size: 0.75rem; color: var(--accent-cyan); font-family: var(--font-mono); }
@@ -288,7 +340,7 @@
     .project-links a { color: var(--text-muted); transition: color 0.3s ease; }
     .project-links a:hover { color: var(--accent-cyan); }
     .project-links a svg { width: 20px; height: 20px; }
-    .project-title { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); }
+    .project-title { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary); }
     .project-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.2rem; }
     .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
     .tech-tag { padding: 0.25rem 0.7rem; background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 4px; font-size: 0.75rem; font-family: var(--font-mono); color: var(--accent-cyan); }
@@ -301,7 +353,7 @@
     .research-icon { width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; color: var(--accent-cyan); }
     .research-icon svg { width: 24px; height: 24px; }
     .research-venue { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .research-title { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); }
+    .research-title { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary); }
     .research-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
     .research-meta { display: flex; gap: 1rem; align-items: center; }
     .research-status { padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; font-family: var(--font-mono); }
@@ -352,7 +404,7 @@
     .achievement-card:hover::before { opacity: 1; }
     .achievement-icon { width: 60px; height: 60px; border-radius: 14px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.2rem; color: var(--accent-cyan); }
     .achievement-icon svg { width: 28px; height: 28px; }
-    .achievement-title { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); }
+    .achievement-title { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary); }
     .achievement-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
     .achievement-tag { display: inline-block; padding: 0.3rem 0.8rem; background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.12); border-radius: 50px; font-size: 0.75rem; font-family: var(--font-mono); color: var(--accent-cyan); }
 
@@ -456,10 +508,15 @@
 
   <!-- HERO SECTION -->
   <section id="hero" class="hero">
+    <div class="hero-intro-overlay" id="heroIntro">
+      <span class="greeting-word" id="greetingWord"></span>
+      <span class="greeting-lang" id="greetingLang"></span>
+      <button class="greeting-skip" id="greetingSkip" aria-label="Skip intro">Skip Intro</button>
+    </div>
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-pulse"></span>
-        <span class="badge-text">Open for Work & Internships</span>
+        <span class="badge-text">Open for Collab & Works</span>
       </div>
       <p class="hero-greeting">Hello, I am</p>
       <h1 class="hero-name">
@@ -552,7 +609,7 @@
               My work spans <strong>AI/ML pipelines</strong> (fraud detection, computer vision, NLP), <strong>full-stack MERN applications</strong>, and <strong>embedded IoT systems</strong> (ESP32, Raspberry Pi, sensor fusion). I have shipped end-to-end prototypes from circuit design to cloud deployment.
             </p>
             <p>
-              Currently serving as <strong>Technical Head at IEEE MHSSCE</strong> and <strong>Event Management Head at NSS Unit</strong>, I lead technical initiatives and organize events that bring engineering communities together.
+              Currently serving as <strong>Technical Head at IEEE MHSSCE</strong> and <strong>Event Management Head at NSS Unit</strong>, I lead technical initiatives and organize events that bring engineering communities together. Can Geek Out anything,
             </p>
           </div>
           <div class="about-stats">
@@ -705,6 +762,7 @@
             <span class="tech-tag">Grafana</span>
             <span class="tech-tag">Prometheus</span>
           </div>
+          <div class="project-highlight">Bank Of India National Hackathon 2026</div>
         </article>
 
         <article class="project-card" data-category="ai-ml iot">
@@ -718,7 +776,7 @@
               </a>
             </div>
           </div>
-          <h3 class="project-title">AeroShield 2.0 — Air Quality System</h3>
+          <h3 class="project-title">AeroShield 2.0 — AI/ML Based IAQ Management System </h3>
           <p class="project-desc">Real-time air quality monitoring with ESP32 and LSTM neural networks. Sensor fusion across PM2.5, CO2, VOC, and temperature. Automated ventilation control with voice alerts.</p>
           <div class="project-tech">
             <span class="tech-tag">ESP32</span>
@@ -726,8 +784,9 @@
             <span class="tech-tag">Python</span>
             <span class="tech-tag">MQTT</span>
             <span class="tech-tag">Sensor Fusion</span>
+            <span class="tech-tag">Embedded Sys</span>
           </div>
-          <div class="project-highlight">2nd Runner Up — SmartSSD 2026 (90+ teams)</div>
+          <div class="project-highlight">2nd Runner Up — R&D-Mhssce 2026 (90+ teams)</div>
         </article>
 
         <article class="project-card" data-category="ai-ml iot">
@@ -750,7 +809,12 @@
             <span class="tech-tag">Flask</span>
             <span class="tech-tag">Firebase</span>
             <span class="tech-tag">Twilio</span>
+            <span class="tech-tag">Sensor Fusion</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">Embedded Sys</span>
+            <span class="tech-tag">AI&ML</span>
           </div>
+          <div class="project-highlight">Winner BYTEBATTLE Hackathon,AIKTC 2026</div>
         </article>
 
         <article class="project-card" data-category="ai-ml fullstack">
@@ -932,7 +996,7 @@
           <div class="orbit-ring orbit-ring-1"></div>
           <div class="orbit-ring orbit-ring-2"></div>
           <div class="orbit-ring orbit-ring-3"></div>
-          <div class="orbit-center">MK<br>TECH</div>
+          <div class="orbit-center">TECH<br>STACK</div>
           <!-- Orbit items with enhanced rotation -->
           <div class="orbit-item" style="--orbit-radius:110px; animation-duration:20s; animation-delay:0s;">Python</div>
           <div class="orbit-item" style="--orbit-radius:110px; animation-duration:20s; animation-delay:-5s;">PyTorch</div>
@@ -1527,6 +1591,69 @@
         navToggle.setAttribute('aria-expanded', 'false');
       });
     });
+
+    // ============================================
+    // MULTILINGUAL GREETING COVER-PAGE INTRO
+    // ============================================
+    const greetings = [
+      { text: 'Hello', lang: 'English' },
+      { text: 'नमस्ते', lang: 'Namaste — Hindi' },
+      { text: 'السلام عليكم', lang: 'Assalamu Alaikum — Arabic' },
+      { text: 'नमस्कार', lang: 'Namaskar — Marathi' },
+      { text: 'வணக்கம்', lang: 'Vanakkam — Tamil' },
+      { text: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ', lang: 'Sat Sri Akal — Punjabi' },
+      { text: '你好', lang: 'Nǐ Hǎo — Chinese' },
+      { text: 'こんにちは', lang: 'Konnichiwa — Japanese' },
+      { text: 'Bonjour', lang: 'French' },
+      { text: 'Hola', lang: 'Spanish' }
+    ];
+
+    const heroIntro = document.getElementById('heroIntro');
+    const greetingWordEl = document.getElementById('greetingWord');
+    const greetingLangEl = document.getElementById('greetingLang');
+    const greetingSkipBtn = document.getElementById('greetingSkip');
+    const heroContentEl = document.querySelector('.hero-content');
+    const scrollIndicatorEl = document.querySelector('.scroll-indicator');
+
+    let greetingIndex = 0;
+    let introTimer = null;
+    let introFinished = false;
+
+    function showGreeting() {
+      const g = greetings[greetingIndex];
+      greetingWordEl.textContent = g.text;
+      greetingLangEl.textContent = g.lang;
+      greetingWordEl.classList.remove('hide');
+      greetingLangEl.classList.remove('show');
+      // force reflow so the show transition retriggers cleanly
+      void greetingWordEl.offsetWidth;
+      greetingWordEl.classList.add('show');
+      greetingLangEl.classList.add('show');
+
+      introTimer = setTimeout(() => {
+        greetingWordEl.classList.remove('show');
+        greetingWordEl.classList.add('hide');
+        greetingLangEl.classList.remove('show');
+        greetingIndex++;
+        if (greetingIndex < greetings.length) {
+          introTimer = setTimeout(showGreeting, 420);
+        } else {
+          introTimer = setTimeout(finishIntro, 420);
+        }
+      }, 850);
+    }
+
+    function finishIntro() {
+      if (introFinished) return;
+      introFinished = true;
+      clearTimeout(introTimer);
+      heroIntro.classList.add('hidden');
+      heroContentEl.classList.add('revealed');
+      scrollIndicatorEl.classList.add('revealed');
+    }
+
+    greetingSkipBtn.addEventListener('click', finishIntro);
+    showGreeting();
 
     // ============================================
     // TYPING EFFECT
