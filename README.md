@@ -2,20 +2,11 @@
 
 > **AI/ML Engineer & Full-Stack MERN Developer | IoT & Embedded Systems Specialist**
 
-A production-grade, FAANG-level portfolio website built with semantic HTML5, modern CSS3, and vanilla JavaScript. Zero dependencies except for icon fonts and Google Fonts CDN.
+Aportfolio website built with semantic HTML5, modern CSS3, and vanilla JavaScript. Zero dependencies except for icon fonts and Google Fonts CDN.
 
 ---
 
-## 🚀 Quick Start
 
-###  GitHub Pages 
-1. Create a new repository on GitHub (e.g., `moinkhan-create.github.io`)
-2. Upload all files from this folder to the repository
-3. Go to **Settings → Pages → Source** and select `main` branch
-4. Your portfolio will be live at `https://moinkhan-create.github.io`
-
-
----
 
 ## 📁 File Structure
 
